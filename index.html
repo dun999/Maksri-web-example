@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NengSry MUA — Make Up Artist & Beauty School Garut</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1008;
+  --gold: #b8935a;
+  --gold-light: #d4b07a;
+  --blush: #c97a7a;
+  --nude: #e8d5c0;
+  --cream: #faf5ef;
+  --rose-dark: #7a3040;
+  --sage: #8a9e8a;
+  --warm-gray: #9e8e80;
+  --white: #fff;
+}
+
+- { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:‘DM Sans’,sans-serif; background:var(–cream); color:var(–ink); overflow-x:hidden; }
+
+/* ── NAV ── */
+nav {
+position:fixed; top:0; inset-x:0; z-index:999;
+display:flex; justify-content:space-between; align-items:center;
+padding:1rem 5vw;
+background:rgba(250,245,239,0.93);
+backdrop-filter:blur(16px);
+border-bottom:1px solid rgba(184,147,90,0.18);
+transition:all .3s;
+}
+.nav-logo {
+font-family:‘Playfair Display’,serif;
+font-size:1.45rem; font-weight:700;
+letter-spacing:.02em; color:var(–ink);
+text-decoration:none;
+}
+.nav-logo .accent { color:var(–gold); font-style:italic; }
+.nav-links { display:flex; gap:2.2rem; list-style:none; }
+.nav-links a {
+font-size:.75rem; letter-spacing:.15em; text-transform:uppercase;
+color:var(–ink); text-decoration:none; font-weight:400;
+transition:color .25s;
+}
+.nav-links a:hover { color:var(–gold); }
+.nav-links .cta {
+background:var(–ink); color:var(–cream) !important;
+padding:.5rem 1.4rem;
+}
+.nav-links .cta:hover { background:var(–gold) !important; color:var(–ink) !important; }
+
+/* ── HERO ── */
+.hero {
+min-height:100vh; padding-top:72px;
+display:grid; grid-template-columns:55% 45%;
+}
+.hero-left {
+display:flex; flex-direction:column; justify-content:center;
+padding:6rem 5vw 6rem 7vw;
+position:relative; z-index:1;
+}
+.hero-eyebrow {
+display:flex; align-items:center; gap:.8rem;
+font-size:.7rem; letter-spacing:.25em; text-transform:uppercase;
+color:var(–gold); margin-bottom:1.8rem;
+opacity:0; animation:up .7s .1s forwards;
+}
+.hero-eyebrow::before { content:’’; width:35px; height:1px; background:var(–gold); }
+.hero-h1 {
+font-family:‘Playfair Display’,serif;
+font-size:clamp(3rem,5.5vw,6rem);
+line-height:1; font-weight:900;
+color:var(–ink); margin-bottom:1.2rem;
+opacity:0; animation:up .7s .25s forwards;
+}
+.hero-h1 .script { font-style:italic; color:var(–blush); font-weight:400; }
+.hero-h1 .outline {
+-webkit-text-stroke:2px var(–ink); color:transparent;
+font-weight:900;
+}
+.hero-sub {
+font-size:.93rem; line-height:1.85; color:var(–warm-gray);
+max-width:460px; margin-bottom:2.8rem; font-weight:300;
+opacity:0; animation:up .7s .4s forwards;
+}
+.hero-actions {
+display:flex; gap:1rem; flex-wrap:wrap;
+opacity:0; animation:up .7s .55s forwards;
+}
+.btn {
+display:inline-block; text-decoration:none;
+font-size:.75rem; letter-spacing:.13em; text-transform:uppercase;
+padding:.9rem 2.2rem; transition:all .3s; font-weight:500;
+font-family:‘DM Sans’,sans-serif;
+}
+.btn-dark { background:var(–ink); color:var(–cream); }
+.btn-dark:hover { background:var(–gold); color:var(–ink); }
+.btn-ghost { border:1.5px solid var(–ink); color:var(–ink); }
+.btn-ghost:hover { background:var(–ink); color:var(–cream); }
+.btn-gold { background:var(–gold); color:var(–ink); }
+.btn-gold:hover { background:var(–ink); color:var(–cream); }
+
+.hero-right {
+position:relative; overflow:hidden;
+opacity:0; animation:fade 1s .3s forwards;
+}
+.hero-bg {
+position:absolute; inset:0;
+background:
+radial-gradient(ellipse at 70% 40%, #c97a7a33 0%, transparent 60%),
+linear-gradient(145deg, #e8c4a8 0%, #c07060 40%, #7a3040 100%);
+}
+.hero-pattern {
+position:absolute; inset:0;
+background-image: repeating-linear-gradient(
+45deg, rgba(255,255,255,.04) 0, rgba(255,255,255,.04) 1px,
+transparent 0, transparent 50%
+);
+background-size:20px 20px;
+}
+.hero-name-big {
+position:absolute; bottom:2rem; left:2rem; right:2rem;
+font-family:‘Playfair Display’,serif; font-size:5rem;
+font-weight:900; font-style:italic;
+color:rgba(255,255,255,.12); line-height:1;
+letter-spacing:-.02em;
+}
+.hero-badge {
+position:absolute; top:3rem; right:3rem;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.25);
+padding:1.5rem; text-align:center;
+}
+.hero-badge-num {
+font-family:‘Playfair Display’,serif;
+font-size:2.5rem; font-weight:700; color:var(–white);
+display:block; line-height:1;
+}
+.hero-badge-text { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.7); }
+.hero-float-card {
+position:absolute; bottom:4rem; left:-3rem;
+background:var(–cream);
+box-shadow:0 12px 40px rgba(26,16,8,.2);
+padding:1.3rem 1.8rem;
+display:flex; gap:2rem;
+}
+.float-stat-num {
+font-family:‘Playfair Display’,serif; font-size:1.8rem;
+font-weight:700; color:var(–rose-dark); display:block; line-height:1;
+}
+.float-stat-lbl { font-size:.65rem; letter-spacing:.1em; text-transform:uppercase; color:var(–warm-gray); }
+
+/* ── GARUT BEAUTY FEST BANNER ── */
+.gbf-banner {
+background:var(–ink);
+padding:1rem 5vw;
+display:flex; align-items:center; justify-content:center; gap:2rem;
+overflow:hidden; position:relative;
+}
+.gbf-banner::before {
+content:’’;
+position:absolute; inset:0;
+background:repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(184,147,90,.06) 60px, rgba(184,147,90,.06) 61px);
+}
+.gbf-tag {
+background:var(–gold); color:var(–ink);
+font-size:.65rem; letter-spacing:.2em; text-transform:uppercase;
+padding:.3rem .8rem; font-weight:500; white-space:nowrap;
+}
+.gbf-text {
+color:var(–nude); font-size:.85rem; font-weight:300;
+letter-spacing:.05em;
+}
+.gbf-text strong { color:var(–gold-light); font-weight:500; }
+
+/* ── SECTION COMMON ── */
+.section-header { text-align:center; padding:5rem 5vw 2.5rem; }
+.s-tag { display:block; font-size:.7rem; letter-spacing:.25em; text-transform:uppercase; color:var(–gold); margin-bottom:.8rem; }
+.s-title {
+font-family:‘Playfair Display’,serif;
+font-size:clamp(2rem,3.5vw,3.2rem);
+font-weight:700; color:var(–ink); line-height:1.15;
+}
+.s-title em { font-style:italic; color:var(–blush); font-weight:400; }
+.s-line { width:50px; height:2px; background:var(–gold); margin:1.2rem auto; }
+.s-desc { max-width:480px; margin:0 auto; font-size:.9rem; line-height:1.8; color:var(–warm-gray); font-weight:300; }
+
+/* ── GARUT BEAUTY FEST ── */
+#gbf { background:var(–ink); padding-bottom:6rem; }
+#gbf .s-title { color:var(–nude); }
+#gbf .s-tag { color:var(–gold); }
+#gbf .s-desc { color:rgba(232,213,192,.65); }
+.gbf-wrap {
+max-width:1200px; margin:0 auto; padding:0 5vw;
+}
+.gbf-main {
+display:grid; grid-template-columns:1fr 1.2fr; gap:4rem; align-items:center;
+margin-bottom:4rem;
+}
+.gbf-poster {
+position:relative; aspect-ratio:3/4; overflow:hidden;
+background:linear-gradient(145deg, #b8935a 0%, #7a3040 50%, #1a1008 100%);
+display:flex; flex-direction:column; align-items:center; justify-content:center;
+padding:3rem;
+}
+.gbf-poster::before {
+content:’’;
+position:absolute; inset:0;
+background:repeating-conic-gradient(rgba(255,255,255,.03) 0% 25%, transparent 0% 50%);
+background-size:40px 40px;
+}
+.gbf-poster-inner { position:relative; z-index:1; text-align:center; }
+.gbf-poster-eyebrow { font-size:.6rem; letter-spacing:.3em; text-transform:uppercase; color:var(–gold-light); margin-bottom:1rem; }
+.gbf-poster-title {
+font-family:‘Playfair Display’,serif; font-size:2.5rem;
+font-weight:900; color:var(–white); line-height:1.05;
+margin-bottom:.5rem;
+}
+.gbf-poster-title .big { font-size:3.5rem; }
+.gbf-poster-line { width:60px; height:2px; background:var(–gold); margin:.8rem auto; }
+.gbf-poster-sub { font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,.6); margin-bottom:1.5rem; }
+.gbf-poster-date {
+background:var(–gold); color:var(–ink);
+font-size:.85rem; padding:.5rem 1.5rem; font-weight:500;
+letter-spacing:.05em;
+}
+.gbf-poster-hostedby {
+margin-top:2rem; font-size:.65rem; letter-spacing:.15em; text-transform:uppercase;
+color:rgba(255,255,255,.4);
+}
+.gbf-poster-hostedby strong { color:var(–gold-light); }
+.gbf-info { }
+.gbf-info-label { font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(–gold); margin-bottom:.5rem; display:block; }
+.gbf-info h3 {
+font-family:‘Playfair Display’,serif; font-size:2.2rem;
+color:var(–nude); font-weight:700; line-height:1.2; margin-bottom:1rem;
+}
+.gbf-info p { font-size:.88rem; line-height:1.85; color:rgba(232,213,192,.7); font-weight:300; margin-bottom:1.5rem; }
+.gbf-highlights { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:2rem 0; }
+.gbf-hl {
+background:rgba(255,255,255,.04);
+border:1px solid rgba(184,147,90,.15);
+padding:1.2rem;
+display:flex; align-items:center; gap:.8rem;
+}
+.gbf-hl-icon { font-size:1.3rem; }
+.gbf-hl-text { font-size:.8rem; color:rgba(232,213,192,.8); line-height:1.4; }
+.gbf-hl-text strong { color:var(–gold-light); display:block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; }
+
+/* Ticket cards */
+.gbf-tickets {
+background:rgba(255,255,255,.03);
+border:1px solid rgba(184,147,90,.12);
+padding:2.5rem;
+margin-top:2rem;
+}
+.gbf-tickets h4 {
+font-family:‘Playfair Display’,serif; font-size:1.2rem;
+color:var(–nude); margin-bottom:1.5rem;
+display:flex; align-items:center; gap:.8rem;
+}
+.gbf-tickets h4::after { content:’’; flex:1; height:1px; background:rgba(184,147,90,.2); }
+.ticket-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+.ticket {
+background:rgba(255,255,255,.05);
+border:1px solid rgba(184,147,90,.2);
+padding:1.5rem;
+position:relative; transition:all .3s; cursor:default;
+}
+.ticket:hover { border-color:var(–gold); background:rgba(184,147,90,.08); }
+.ticket-label { font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(–gold); margin-bottom:.5rem; display:block; }
+.ticket-name { font-family:‘Playfair Display’,serif; font-size:1rem; color:var(–nude); font-weight:700; margin-bottom:.3rem; line-height:1.2; }
+.ticket-price { font-family:‘Playfair Display’,serif; font-size:1.5rem; color:var(–gold-light); font-weight:700; }
+.ticket-badge {
+position:absolute; top:.8rem; right:.8rem;
+background:rgba(201,122,122,.2); border:1px solid rgba(201,122,122,.4);
+color:var(–blush); font-size:.6rem; letter-spacing:.1em; text-transform:uppercase;
+padding:.2rem .6rem;
+}
+.ticket-4 { grid-column:span 2; }
+
+/* ── LAYANAN / SERVICES ── */
+#layanan { background:var(–cream); padding-bottom:5rem; }
+.svc-grid {
+display:grid; grid-template-columns:repeat(3,1fr);
+max-width:1100px; margin:0 auto; padding:0 5vw;
+gap:0;
+border:1px solid rgba(184,147,90,.15);
+}
+.svc-card {
+padding:3rem 2.5rem;
+border-right:1px solid rgba(184,147,90,.15);
+position:relative; overflow:hidden; cursor:default;
+transition:background .4s;
+}
+.svc-card:last-child { border-right:none; }
+.svc-icon { font-size:2rem; margin-bottom:1.5rem; display:block; }
+.svc-num {
+position:absolute; top:1.5rem; right:2rem;
+font-family:‘Playfair Display’,serif; font-size:4rem; font-weight:900;
+color:rgba(184,147,90,.07); line-height:1;
+}
+.svc-title { font-family:‘Playfair Display’,serif; font-size:1.4rem; font-weight:700; color:var(–ink); margin-bottom:.8rem; }
+.svc-desc { font-size:.83rem; line-height:1.8; color:var(–warm-gray); font-weight:300; margin-bottom:1.5rem; }
+.svc-from { font-size:.65rem; letter-spacing:.15em; text-transform:uppercase; color:var(–gold); }
+.svc-price { font-family:‘Playfair Display’,serif; font-size:1.5rem; color:var(–ink); font-weight:700; }
+.svc-card:hover { background:var(–ink); }
+.svc-card:hover .svc-title,
+.svc-card:hover .svc-desc,
+.svc-card:hover .svc-price { color:var(–nude); }
+.svc-card:hover .svc-from { color:var(–gold-light); }
+
+/* ── KELAS ── */
+#kelas { background:#f5ede0; padding-bottom:5rem; }
+.kelas-grid {
+display:grid; grid-template-columns:repeat(2,1fr);
+gap:1.5rem; max-width:1000px; margin:0 auto; padding:0 5vw;
+}
+.kelas-card {
+background:var(–white);
+border-bottom:3px solid transparent;
+padding:2.5rem;
+transition:all .35s;
+cursor:default; position:relative; overflow:hidden;
+}
+.kelas-card::after {
+content:’’;
+position:absolute; bottom:0; left:0; right:0; height:3px;
+background:var(–gold); transform:scaleX(0); transform-origin:left;
+transition:transform .35s;
+}
+.kelas-card:hover::after { transform:scaleX(1); }
+.kelas-card:hover { box-shadow:0 12px 40px rgba(26,16,8,.1); transform:translateY(-4px); }
+.kelas-num {
+font-family:‘Playfair Display’,serif; font-size:5rem; font-weight:900;
+color:rgba(184,147,90,.08); position:absolute; top:-.5rem; right:1.5rem;
+line-height:1;
+}
+.kelas-cat { font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(–gold); margin-bottom:.6rem; display:block; }
+.kelas-title { font-family:‘Playfair Display’,serif; font-size:1.4rem; font-weight:700; color:var(–ink); margin-bottom:.8rem; }
+.kelas-desc { font-size:.83rem; line-height:1.8; color:var(–warm-gray); font-weight:300; margin-bottom:1.5rem; }
+.kelas-footer { display:flex; justify-content:space-between; align-items:flex-end; }
+.kelas-price { font-family:‘Playfair Display’,serif; font-size:1.8rem; font-weight:700; color:var(–rose-dark); }
+.kelas-price small { font-size:.75rem; font-family:‘DM Sans’,sans-serif; color:var(–warm-gray); font-weight:300; display:block; }
+.kelas-featured {
+background:var(–ink);
+border-bottom-color:var(–gold);
+}
+.kelas-featured .kelas-title { color:var(–nude); }
+.kelas-featured .kelas-desc { color:rgba(232,213,192,.65); }
+.kelas-featured .kelas-price { color:var(–gold-light); }
+.kelas-featured .kelas-price small { color:rgba(232,213,192,.5); }
+.kelas-featured .kelas-cat { color:var(–gold); }
+.kelas-featured .kelas-num { color:rgba(255,255,255,.04); }
+.kelas-full { grid-column:span 2; }
+.kelas-olis {
+background:linear-gradient(135deg, var(–rose-dark), #c97a7a);
+color:var(–white);
+}
+.kelas-olis .kelas-title { color:var(–white); }
+.kelas-olis .kelas-desc { color:rgba(255,255,255,.75); }
+.kelas-olis .kelas-price { color:var(–white); }
+.kelas-olis .kelas-price small { color:rgba(255,255,255,.55); }
+.kelas-olis .kelas-cat { color:rgba(255,255,255,.6); }
+.kelas-olis .kelas-num { color:rgba(255,255,255,.04); }
+.kelas-olis::after { background:var(–nude); }
+.kelas-olis .btn { background:rgba(255,255,255,.15); color:var(–white); border:1px solid rgba(255,255,255,.3); }
+.kelas-olis .btn:hover { background:var(–white); color:var(–rose-dark); }
+
+/* ── GALLERY ── */
+#galeri { padding-bottom:5rem; }
+.gal-grid {
+display:grid; max-width:1200px; margin:0 auto; padding:0 5vw;
+grid-template-columns:repeat(12,1fr); grid-auto-rows:160px; gap:6px;
+}
+.gal-item { overflow:hidden; position:relative; cursor:pointer; }
+.gal-item.a { grid-column:span 5; grid-row:span 2; }
+.gal-item.b { grid-column:span 4; }
+.gal-item.c { grid-column:span 3; }
+.gal-item.d { grid-column:span 4; grid-row:span 2; }
+.gal-item.e { grid-column:span 3; }
+.gal-item.f { grid-column:span 5; }
+.gal-bg { position:absolute; inset:0; transition:transform .5s cubic-bezier(.4,0,.2,1); }
+.gal-item:hover .gal-bg { transform:scale(1.07); }
+.gal-label {
+position:absolute; bottom:0; inset-x:0;
+background:linear-gradient(to top, rgba(26,16,8,.85), transparent);
+padding:1.5rem 1rem .8rem;
+font-family:‘Playfair Display’,serif; font-style:italic;
+color:var(–cream); font-size:.95rem;
+opacity:0; transition:opacity .3s;
+}
+.gal-item:hover .gal-label { opacity:1; }
+
+/* ── TESTIMONIAL ── */
+#ulasan { background:var(–ink); padding-bottom:5rem; }
+#ulasan .s-title { color:var(–nude); }
+#ulasan .s-desc { color:rgba(232,213,192,.6); }
+.testi-grid {
+display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+max-width:1100px; margin:0 auto; padding:0 5vw;
+background:rgba(184,147,90,.1);
+}
+.testi-card {
+background:var(–ink); padding:2.5rem;
+transition:background .3s;
+}
+.testi-card:hover { background:rgba(255,255,255,.03); }
+.testi-stars { color:var(–gold); font-size:.8rem; margin-bottom:1.2rem; letter-spacing:.15em; }
+.testi-text {
+font-family:‘Playfair Display’,serif; font-style:italic;
+font-size:1rem; line-height:1.75; color:rgba(232,213,192,.8);
+margin-bottom:1.8rem;
+}
+.testi-author { display:flex; align-items:center; gap:.8rem; }
+.testi-avatar {
+width:38px; height:38px; border-radius:50%;
+display:flex; align-items:center; justify-content:center;
+font-family:‘Playfair Display’,serif; font-size:1rem; font-weight:700;
+color:var(–white); flex-shrink:0;
+}
+.testi-name { font-size:.83rem; font-weight:500; color:var(–nude); }
+.testi-role { font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(–gold); }
+
+/* ── KONTAK ── */
+#kontak { padding:6rem 5vw; }
+.kontak-wrap {
+max-width:1100px; margin:0 auto;
+display:grid; grid-template-columns:1.1fr 1fr; gap:5rem; align-items:start;
+}
+.kontak-left { }
+.kontak-right { }
+.kontak-details { margin-top:2.5rem; }
+.k-item { display:flex; gap:1rem; margin-bottom:1.5rem; align-items:flex-start; }
+.k-icon { font-size:1.1rem; flex-shrink:0; margin-top:.15rem; }
+.k-lbl { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(–gold); display:block; margin-bottom:.25rem; }
+.k-val { font-size:.88rem; color:var(–ink); line-height:1.6; font-weight:300; }
+
+.form-g { margin-bottom:1.1rem; }
+.form-g label { display:block; font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(–warm-gray); margin-bottom:.5rem; }
+.form-g input, .form-g select, .form-g textarea {
+width:100%; background:var(–white); border:1.5px solid rgba(184,147,90,.2);
+padding:.8rem 1.1rem; font-family:‘DM Sans’,sans-serif; font-size:.88rem; color:var(–ink);
+outline:none; border-radius:0; transition:border-color .25s; -webkit-appearance:none;
+}
+.form-g input:focus, .form-g select:focus, .form-g textarea:focus { border-color:var(–gold); }
+.form-g textarea { min-height:90px; resize:vertical; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+.form-g select option { background:var(–white); }
+
+/* ── FOOTER ── */
+footer {
+background:#120b05; padding:2rem 5vw;
+display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
+}
+.footer-logo { font-family:‘Playfair Display’,serif; font-size:1.1rem; font-weight:700; color:var(–nude); }
+.footer-logo .accent { color:var(–gold); font-style:italic; }
+.footer-copy { font-size:.72rem; color:rgba(232,213,192,.3); }
+.footer-links { display:flex; gap:1.5rem; }
+.footer-links a { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(232,213,192,.4); text-decoration:none; transition:color .25s; }
+.footer-links a:hover { color:var(–gold); }
+
+/* ── WA FLOAT ── */
+.wa-btn {
+position:fixed; bottom:1.8rem; right:1.8rem; z-index:999;
+width:54px; height:54px; border-radius:50%; background:#25d366;
+display:flex; align-items:center; justify-content:center; font-size:1.4rem;
+box-shadow:0 4px 24px rgba(37,211,102,.45); text-decoration:none;
+animation:pulse 2s infinite; transition:transform .3s;
+}
+.wa-btn:hover { transform:scale(1.1); }
+
+/* ── MARQUEE ── */
+.marquee-wrap { background:var(–gold); padding:.6rem 0; overflow:hidden; }
+.marquee-track {
+display:flex; gap:0; white-space:nowrap;
+animation:marquee 20s linear infinite;
+}
+.marquee-item {
+flex-shrink:0; padding:0 2rem;
+font-size:.7rem; letter-spacing:.2em; text-transform:uppercase;
+color:var(–ink); font-weight:500;
+}
+.marquee-dot { color:var(–rose-dark); }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(32px); transition:opacity .7s, transform .7s; }
+.reveal.v { opacity:1; transform:none; }
+.d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; } .d3 { transition-delay:.3s; } .d4 { transition-delay:.4s; }
+
+/* ── KEYFRAMES ── */
+@keyframes up { from{ opacity:0; transform:translateY(28px); } to{ opacity:1; transform:none; } }
+@keyframes fade { from{ opacity:0; } to{ opacity:1; } }
+@keyframes pulse { 0%,100%{ box-shadow:0 4px 24px rgba(37,211,102,.45); } 50%{ box-shadow:0 4px 36px rgba(37,211,102,.7); } }
+@keyframes marquee { from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+nav { padding:1rem 4vw; }
+.nav-links { display:none; }
+.hero { grid-template-columns:1fr; }
+.hero-right { height:50vh; }
+.hero-float-card { left:0; bottom:0; right:0; }
+.svc-grid { grid-template-columns:1fr; max-width:500px; }
+.svc-card { border-right:none; border-bottom:1px solid rgba(184,147,90,.15); }
+.kelas-grid { grid-template-columns:1fr; }
+.kelas-full { grid-column:span 1; }
+.gbf-main { grid-template-columns:1fr; }
+.ticket-grid { grid-template-columns:1fr 1fr; }
+.ticket-4 { grid-column:span 2; }
+.testi-grid { grid-template-columns:1fr; max-width:500px; }
+.kontak-wrap { grid-template-columns:1fr; gap:3rem; }
+.gal-grid { grid-template-columns:repeat(6,1fr); }
+.gal-item.a { grid-column:span 6; grid-row:span 1; }
+.gal-item.b,.gal-item.c,.gal-item.d,.gal-item.e,.gal-item.f { grid-column:span 3; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">NengSry <span class="accent">MUA</span></a>
+  <ul class="nav-links">
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#kelas">Kelas</a></li>
+    <li><a href="#gbf">Beauty Fest</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+    <li><a href="#ulasan">Ulasan</a></li>
+    <li><a href="#kontak" class="cta">Book Sekarang</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Make Up Artist · Garut, Jawa Barat</div>
+    <h1 class="hero-h1">
+      Riasan<br>
+      <span class="script">Terbaik</span><br>
+      <span class="outline">Garut</span>
+    </h1>
+    <p class="hero-sub">
+      NengSry MUA — studio riasan pengantin & beauty school kepercayaan di Garut. Dari bridal look hingga kelas makeup profesional, kami hadir mewujudkan kecantikan terbaikmu.
+    </p>
+    <div class="hero-actions">
+      <a href="#kontak" class="btn btn-dark">Book Konsultasi</a>
+      <a href="#kelas" class="btn btn-ghost">Lihat Kelas</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-badge">
+      <span class="hero-badge-num">500+</span>
+      <span class="hero-badge-text">Happy Clients</span>
+    </div>
+    <div class="hero-name-big">NengSry</div>
+    <div class="hero-float-card">
+      <div>
+        <span class="float-stat-num">8</span>
+        <span class="float-stat-lbl">Tahun Pengalaman</span>
+      </div>
+      <div>
+        <span class="float-stat-num">4.9★</span>
+        <span class="float-stat-lbl">Rating Klien</span>
+      </div>
+      <div>
+        <span class="float-stat-num">4</span>
+        <span class="float-stat-lbl">Jenis Kelas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GBF PROMO BAR -->
+
+<div class="gbf-banner">
+  <span class="gbf-tag">Event Highlight</span>
+  <span class="gbf-text">
+    <strong>Garut Beauty Fest</strong> — Event kecantikan terbesar di Garut. Parade MUA, Beauty Class & Workshop Olis Herawati sudah sukses digelar!
+  </span>
+  <a href="#gbf" class="btn btn-gold" style="padding:.5rem 1.5rem; font-size:.72rem; white-space:nowrap;">Lihat Detail</a>
+</div>
+
+<!-- MARQUEE -->
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">NengSry MUA</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Garut Beauty Fest</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Bridal Specialist</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Parade MUA Nusantara</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Beauty Class Garut</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Workshop Olis Herawati</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">NengSry MUA</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Garut Beauty Fest</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Bridal Specialist</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Parade MUA Nusantara</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Beauty Class Garut</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Workshop Olis Herawati</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- GARUT BEAUTY FEST -->
+
+<section id="gbf">
+  <div class="section-header">
+    <span class="s-tag reveal">— Event Eksklusif —</span>
+    <h2 class="s-title reveal d1">Garut <em>Beauty Fest</em></h2>
+    <div class="s-line reveal"></div>
+    <p class="s-desc reveal d2">Event kecantikan terbesar di Garut yang berhasil mengumpulkan ratusan beauty enthusiast, MUA profesional, dan pecinta fashion di satu panggung.</p>
+  </div>
+  <div class="gbf-wrap">
+    <div class="gbf-main">
+      <div class="gbf-poster reveal">
+        <div class="gbf-poster-inner">
+          <div class="gbf-poster-eyebrow">NengSry MUA Proudly Presents</div>
+          <div class="gbf-poster-title">
+            <div class="big">GARUT</div>
+            BEAUTY<br>FEST
+          </div>
+          <div class="gbf-poster-line"></div>
+          <div class="gbf-poster-sub">Garut · Jawa Barat</div>
+          <div class="gbf-poster-date">Event Eksklusif · Sudah Terlaksana</div>
+          <div class="gbf-poster-hostedby">Hosted by <strong>NengSry MUA</strong></div>
+        </div>
+      </div>
+
+```
+  <div class="gbf-info reveal d1">
+    <span class="gbf-info-label">Tentang Event</span>
+    <h3>Panggung Kecantikan<br>Pertama di Garut</h3>
+    <p>Garut Beauty Fest adalah event kecantikan eksklusif yang diinisiasi oleh NengSry MUA — menghadirkan kompetisi makeup, kelas, workshop, dan parade busana Nusantara dalam satu festival yang meriah.</p>
+    <p>Event ini berhasil menjadi wadah para MUA lokal Garut untuk unjuk kemampuan, sekaligus memperkenalkan dunia kecantikan kepada masyarakat Garut secara lebih luas.</p>
+
+    <div class="gbf-highlights">
+      <div class="gbf-hl">
+        <span class="gbf-hl-icon">👑</span>
+        <div class="gbf-hl-text">
+          <strong>Parade MUA</strong>
+          Kompetisi riasan terbuka
+        </div>
+      </div>
+      <div class="gbf-hl">
+        <span class="gbf-hl-icon">🎓</span>
+        <div class="gbf-hl-text">
+          <strong>Beauty Class</strong>
+          Kelas langsung dari MUA
+        </div>
+      </div>
+      <div class="gbf-hl">
+        <span class="gbf-hl-icon">🌺</span>
+        <div class="gbf-hl-text">
+          <strong>Nusantara Heritage</strong>
+          Parade busana tradisional
+        </div>
+      </div>
+      <div class="gbf-hl">
+        <span class="gbf-hl-icon">⭐</span>
+        <div class="gbf-hl-text">
+          <strong>Workshop Eksklusif</strong>
+          Bersama Olis Herawati
+        </div>
+      </div>
+    </div>
+
+    <div class="gbf-tickets">
+      <h4>Paket yang Sudah Digelar</h4>
+      <div class="ticket-grid">
+        <div class="ticket">
+          <span class="ticket-badge">Full Package</span>
+          <span class="ticket-label">Kompetisi</span>
+          <div class="ticket-name">Parade MUA</div>
+          <div class="ticket-price">Rp 350.000</div>
+        </div>
+        <div class="ticket">
+          <span class="ticket-label">Edukasi</span>
+          <div class="ticket-name">Beauty Class</div>
+          <div class="ticket-price">Rp 200.000</div>
+        </div>
+        <div class="ticket">
+          <span class="ticket-label">Heritage</span>
+          <div class="ticket-name">Parade MUA<br>Nusantara</div>
+          <div class="ticket-price">Rp 400.000</div>
+        </div>
+        <div class="ticket">
+          <span class="ticket-label">Exclusive Workshop</span>
+          <div class="ticket-name">Workshop<br>Olis Herawati</div>
+          <div class="ticket-price">Hubungi Kami</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:.78rem; color:rgba(232,213,192,.45); margin-top:1rem; font-style:italic;">
+      * Event sudah berakhir. Daftarkan email/WA Anda untuk mendapat info event berikutnya.
+    </p>
+    <a href="#kontak" class="btn btn-gold" style="margin-top:1rem;">Info Event Berikutnya</a>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- LAYANAN -->
+
+<section id="layanan">
+  <div class="section-header">
+    <span class="s-tag reveal">— Layanan Utama —</span>
+    <h2 class="s-title reveal d1">Jasa Rias <em>Profesional</em></h2>
+    <div class="s-line reveal"></div>
+    <p class="s-desc reveal d2">Dari akad, resepsi, hingga pre-wedding — kami hadir menjaga kecantikanmu sepanjang hari spesialmu</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <span class="svc-num">01</span>
+      <span class="svc-icon">💍</span>
+      <div class="svc-title">Rias Pengantin</div>
+      <p class="svc-desc">Paket lengkap rias pengantin Sunda, modern, maupun mix. Termasuk pendampingan di akad & resepsi. Sanggul, kebaya, dan aksesori tersedia.</p>
+      <div class="svc-from">Mulai dari</div>
+      <div class="svc-price">Rp 1.500.000</div>
+    </div>
+    <div class="svc-card reveal d1">
+      <span class="svc-num">02</span>
+      <span class="svc-icon">📸</span>
+      <div class="svc-title">Pre-Wedding & Event</div>
+      <p class="svc-desc">Riasan untuk sesi foto pre-wedding, engagement, siraman, pengajian, dan acara spesial lainnya yang ingin Anda kenang.</p>
+      <div class="svc-from">Mulai dari</div>
+      <div class="svc-price">Rp 450.000</div>
+    </div>
+    <div class="svc-card reveal d2">
+      <span class="svc-num">03</span>
+      <span class="svc-icon">🎓</span>
+      <div class="svc-title">Rias Wisuda & Formal</div>
+      <p class="svc-desc">Tampil memukau di hari wisuda, prom night, atau acara formal lainnya. Natural hingga glam, semua bisa kami wujudkan.</p>
+      <div class="svc-from">Mulai dari</div>
+      <div class="svc-price">Rp 250.000</div>
+    </div>
+  </div>
+</section>
+
+<!-- KELAS -->
+
+<section id="kelas">
+  <div class="section-header">
+    <span class="s-tag reveal">— NengSry Beauty School —</span>
+    <h2 class="s-title reveal d1">Kelas Makeup <em>Pilihan</em></h2>
+    <div class="s-line reveal"></div>
+    <p class="s-desc reveal d2">Belajar langsung dari MUA berpengalaman. Kuasai teknik profesional dan mulai perjalanan karier kecantikanmu.</p>
+  </div>
+  <div class="kelas-grid">
+    <div class="kelas-card reveal">
+      <span class="kelas-num">01</span>
+      <span class="kelas-cat">Kompetisi · Full Package</span>
+      <div class="kelas-title">Parade MUA</div>
+      <p class="kelas-desc">Kelas sekaligus kompetisi makeup terbuka. Peserta belajar teknik riasan panggung lalu unjuk karya di depan juri profesional. Cocok untuk MUA yang ingin mengukur kemampuan dan membangun portofolio.</p>
+      <div class="kelas-footer">
+        <div class="kelas-price">Rp 350.000 <small>Full Package</small></div>
+        <a href="#kontak" class="btn btn-dark" style="font-size:.7rem; padding:.6rem 1.2rem;">Daftar</a>
+      </div>
+    </div>
+
+```
+<div class="kelas-card kelas-featured reveal d1">
+  <span class="kelas-num">02</span>
+  <span class="kelas-cat">Edukasi</span>
+  <div class="kelas-title">Beauty Class</div>
+  <p class="kelas-desc">Kelas makeup edukatif untuk pemula hingga semi-profesional. Materi mencakup skincare prep, teknik dasar, contouring, dan finishing. Langsung dipandu oleh NengSry.</p>
+  <div class="kelas-footer">
+    <div class="kelas-price">Rp 200.000 <small>Per Peserta</small></div>
+    <a href="#kontak" class="btn btn-gold" style="font-size:.7rem; padding:.6rem 1.2rem;">Daftar</a>
+  </div>
+</div>
+
+<div class="kelas-card reveal d2">
+  <span class="kelas-num">03</span>
+  <span class="kelas-cat">Heritage · Kompetisi</span>
+  <div class="kelas-title">Parade MUA Nusantara Heritage</div>
+  <p class="kelas-desc">Parade makeup bertema budaya Nusantara — memadupadankan riasan tradisional daerah-daerah Indonesia. Peserta wajib mengangkat satu tema budaya lokal dalam karya mereka.</p>
+  <div class="kelas-footer">
+    <div class="kelas-price">Rp 400.000 <small>Full Package</small></div>
+    <a href="#kontak" class="btn btn-dark" style="font-size:.7rem; padding:.6rem 1.2rem;">Daftar</a>
+  </div>
+</div>
+
+<div class="kelas-card kelas-olis kelas-full reveal d3">
+  <span class="kelas-num">04</span>
+  <span class="kelas-cat">Exclusive · Special Guest</span>
+  <div class="kelas-title">Workshop Olis Herawati</div>
+  <p class="kelas-desc">Workshop eksklusif bersama Olis Herawati — salah satu nama besar di industri kecantikan. Dapatkan insight mendalam tentang teknik makeup level tinggi, membangun personal branding sebagai MUA, dan tips bertahan di industri kreatif. Kuota sangat terbatas.</p>
+  <div class="kelas-footer">
+    <div class="kelas-price">Info Harga <small>Hubungi langsung</small></div>
+    <a href="https://wa.me/6281234567890" target="_blank" class="btn">WhatsApp Kami</a>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- GALERI -->
+
+<section id="galeri">
+  <div class="section-header">
+    <span class="s-tag reveal">— Portofolio —</span>
+    <h2 class="s-title reveal d1">Karya <em>NengSry</em></h2>
+    <div class="s-line reveal"></div>
+  </div>
+  <div class="gal-grid">
+    <div class="gal-item a reveal">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#e8c4b8,#8b3050);position:absolute;inset:0;"></div>
+      <div class="gal-label">Pengantin Sunda Modern</div>
+    </div>
+    <div class="gal-item b reveal d1">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#d4b8a0,#6b3820);position:absolute;inset:0;"></div>
+      <div class="gal-label">Bridal Editorial</div>
+    </div>
+    <div class="gal-item c reveal d2">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#c8a090,#4a2818);position:absolute;inset:0;"></div>
+      <div class="gal-label">Nusantara Look</div>
+    </div>
+    <div class="gal-item d reveal d1">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#1a1008,#b8935a);position:absolute;inset:0;"></div>
+      <div class="gal-label">Beauty Fest Highlight</div>
+    </div>
+    <div class="gal-item e reveal d2">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#a09080,#f0e0d0);position:absolute;inset:0;"></div>
+      <div class="gal-label">Pre-Wedding Look</div>
+    </div>
+    <div class="gal-item f reveal d3">
+      <div class="gal-bg" style="background:linear-gradient(145deg,#c07080,#faf0e8);position:absolute;inset:0;"></div>
+      <div class="gal-label">Parade MUA Heritage</div>
+    </div>
+  </div>
+</section>
+
+<!-- ULASAN -->
+
+<section id="ulasan">
+  <div class="section-header">
+    <span class="s-tag reveal">— Kata Klien —</span>
+    <h2 class="s-title reveal d1">Mereka Sudah<br><em>Merasakan</em></h2>
+    <div class="s-line reveal"></div>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Riasannya tahan dari subuh sampai malam. Teh NengSry sangat sabar dan profesional, hasil riasannya bahkan lebih bagus dari ekspektasi saya. Recommended banget!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--rose-dark);">A</div>
+        <div>
+          <div class="testi-name">Annisa Rahayu</div>
+          <div class="testi-role">Pengantin · 2024</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Ikut Beauty Class di Garut Beauty Fest, ilmunya luar biasa dan harganya worth it banget. Bisa langsung praktek dan dapet feedback dari MUA berpengalaman. Kapan ada event lagi?"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--gold); color:var(--ink);">D</div>
+        <div>
+          <div class="testi-name">Desi Fitriana</div>
+          <div class="testi-role">Peserta Beauty Class</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal d2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Parade MUA Nusantara Heritage benar-benar pengalaman yang berkesan. Konsepnya matang, panitia ramah, dan bisa ketemu banyak MUA Garut yang berbakat. Bangga punya event kayak gini di Garut!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:var(--sage);">R</div>
+        <div>
+          <div class="testi-name">Rini Marliani</div>
+          <div class="testi-role">Peserta Parade MUA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+
+<section id="kontak">
+  <div class="kontak-wrap">
+    <div class="kontak-left reveal">
+      <span class="s-tag" style="text-align:left;display:block">— Hubungi Kami —</span>
+      <h2 class="s-title" style="text-align:left;">Yuk Wujudkan<br><em>Impianmu</em></h2>
+      <div class="s-line" style="margin-left:0;"></div>
+      <p style="font-size:.88rem;line-height:1.8;color:var(--warm-gray);font-weight:300;max-width:380px;">
+        Konsultasikan kebutuhan riasanmu, tanya jadwal kelas, atau info event berikutnya. Tim NengSry MUA siap membantu!
+      </p>
+      <div class="kontak-details">
+        <div class="k-item">
+          <span class="k-icon">📍</span>
+          <div>
+            <span class="k-lbl">Studio</span>
+            <span class="k-val">Garut Kota, Kabupaten Garut<br>Jawa Barat</span>
+          </div>
+        </div>
+        <div class="k-item">
+          <span class="k-icon">📱</span>
+          <div>
+            <span class="k-lbl">WhatsApp</span>
+            <span class="k-val">+62 812-XXXX-XXXX</span>
+          </div>
+        </div>
+        <div class="k-item">
+          <span class="k-icon">📸</span>
+          <div>
+            <span class="k-lbl">Instagram</span>
+            <span class="k-val">@nengsry.mua</span>
+          </div>
+        </div>
+        <div class="k-item">
+          <span class="k-icon">🎬</span>
+          <div>
+            <span class="k-lbl">TikTok</span>
+            <span class="k-val">@nengsrymua</span>
+          </div>
+        </div>
+        <div class="k-item">
+          <span class="k-icon">🕐</span>
+          <div>
+            <span class="k-lbl">Jam Studio</span>
+            <span class="k-val">Senin – Sabtu: 08.00 – 20.00<br>Minggu: 09.00 – 17.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="kontak-right reveal d1">
+      <div class="form-g">
+        <label>Nama Lengkap</label>
+        <input type="text" id="f-nama" placeholder="Nama kamu">
+      </div>
+      <div class="form-row">
+        <div class="form-g">
+          <label>No. WhatsApp</label>
+          <input type="tel" id="f-wa" placeholder="08xx-xxxx-xxxx">
+        </div>
+        <div class="form-g">
+          <label>Tanggal Acara</label>
+          <input type="date" id="f-tgl">
+        </div>
+      </div>
+      <div class="form-g">
+        <label>Kebutuhan</label>
+        <select id="f-svc">
+          <option value="">— Pilih yang kamu butuhkan —</option>
+          <optgroup label="Jasa Rias">
+            <option>Rias Pengantin (Full Package)</option>
+            <option>Rias Pengantin (Akad/Resepsi)</option>
+            <option>Rias Pre-Wedding / Engagement</option>
+            <option>Rias Wisuda / Formal</option>
+          </optgroup>
+          <optgroup label="Kelas & Workshop">
+            <option>Parade MUA — Rp 350.000</option>
+            <option>Beauty Class — Rp 200.000</option>
+            <option>Parade MUA Nusantara Heritage — Rp 400.000</option>
+            <option>Workshop Olis Herawati</option>
+          </optgroup>
+          <optgroup label="Event">
+            <option>Info Garut Beauty Fest Berikutnya</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class="form-g">
+        <label>Pesan / Pertanyaan</label>
+        <textarea id="f-msg" placeholder="Ceritakan lebih detail kebutuhanmu..."></textarea>
+      </div>
+      <button onclick="kirimWA()" class="btn btn-dark" style="width:100%;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:.8rem;padding:1rem;">
+        Kirim via WhatsApp 💬
+      </button>
+      <p style="font-size:.7rem;color:var(--warm-gray);margin-top:.8rem;text-align:center;">Respon dalam 1×24 jam · Konsultasi pertama gratis</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">NengSry <span class="accent">MUA</span></div>
+  <div class="footer-copy">© 2025 NengSry MUA Garut. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#layanan">Layanan</a>
+    <a href="#kelas">Kelas</a>
+    <a href="#gbf">Beauty Fest</a>
+    <a href="#kontak">Kontak</a>
+  </div>
+</footer>
+
+<a href="https://wa.me/6281234567890" class="wa-btn" target="_blank">💬</a>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('v'); });
+  }, {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // WhatsApp form
+  function kirimWA(){
+    const nama = document.getElementById('f-nama').value || 'Tamu';
+    const svc  = document.getElementById('f-svc').value  || 'belum dipilih';
+    const tgl  = document.getElementById('f-tgl').value  || 'belum ditentukan';
+    const msg  = document.getElementById('f-msg').value  || '-';
+    const text = `Halo NengSry MUA! 👋\n\nSaya *${nama}* ingin menanyakan:\n📌 *Layanan:* ${svc}\n📅 *Tanggal:* ${tgl}\n💬 *Pesan:* ${msg}\n\nMohon informasinya ya, terima kasih! 🌸`;
+    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`, '_blank');
+  }
+
+  // Navbar shadow on scroll
+  window.addEventListener('scroll',()=>{
+    document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 2px 20px rgba(26,16,8,.08)' : 'none';
+  });
+</script>
+
+</body>
+</html>
