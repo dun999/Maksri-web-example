@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maksri MUA | Wedding Makeup Artist Jawa Barat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--black:#111;
+--dark:#1c1c1c;
+--brown:#6b4f3a;
+--soft:#8a6a52;
+--gray:#bfbfbf;
+--white:#f4f4f4;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;}
+
+body{
+background:var(--black);
+color:var(--white);
+font-family:'Montserrat',sans-serif;
+line-height:1.7;
+}
+
+h1,h2,h3{
+font-family:'Cormorant Garamond',serif;
+letter-spacing:1px;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+}
+
+header{
+background:var(--dark);
+padding:20px 0;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+color:var(--brown);
+font-size:26px;
+}
+
+nav a{
+color:var(--gray);
+text-decoration:none;
+margin-left:20px;
+font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{color:var(--brown)}
+
+section{padding:90px 0;}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:38px;
+color:var(--brown);
+}
+
+.section-title p{
+color:var(--gray);
+margin-top:10px;
+}
+
+/* HERO */
+.hero{
+height:90vh;
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('gallery1.jpg') center/cover;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+}
+
+.hero h1{
+font-size:54px;
+margin-bottom:20px;
+}
+
+.hero p{
+color:var(--gray);
+margin-bottom:30px;
+}
+
+.btn{
+background:var(--brown);
+color:var(--white);
+padding:14px 30px;
+text-decoration:none;
+font-size:14px;
+letter-spacing:1px;
+display:inline-block;
+transition:.3s;
+}
+
+.btn:hover{background:var(--soft)}
+
+/* ABOUT */
+.about p{
+max-width:750px;
+margin:auto;
+text-align:center;
+color:var(--gray);
+}
+
+/* GALLERY */
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery-grid img{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:12px;
+}
+
+/* PRICING */
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.price-card{
+background:var(--dark);
+padding:30px;
+border-radius:12px;
+}
+
+.price-card h3{
+color:var(--brown);
+margin-bottom:10px;
+}
+
+.price{
+font-size:22px;
+margin-bottom:15px;
+}
+
+.price-card ul{
+list-style:none;
+color:var(--gray);
+font-size:14px;
+}
+
+.price-card ul li{
+margin-bottom:6px;
+}
+
+/* CONTACT */
+.contact p{
+text-align:center;
+color:var(--gray);
+margin-bottom:15px;
+}
+
+footer{
+background:var(--dark);
+text-align:center;
+padding:30px 0;
+color:var(--gray);
+}
+
+.footer-instagram{
+display:inline-flex;
+align-items:center;
+gap:8px;
+color:var(--gray);
+text-decoration:none;
+margin-top:10px;
+transition:.3s;
+}
+
+.footer-instagram:hover{color:var(--brown)}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">Maksri MUA</div>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div>
+<h1>Timeless Beauty for Your Special Day</h1>
+<p>Professional Wedding Makeup Artist in Jawa Barat</p>
+<a href="mailto:hello@maksrimua.com" class="btn">Book Consultation</a>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="container">
+<div class="section-title">
+<h2>About</h2>
+<p>Elegant. Soft. Luxurious.</p>
+</div>
+<p>
+Maksri MUA menghadirkan riasan wedding yang elegan dan timeless dengan sentuhan modern.
+Berbasis di Garut dan melayani berbagai kota di Jawa Barat, Maksri MUA siap menghadirkan layanan profesional
+yang scalable untuk wedding, engagement, hingga special event dengan standar kualitas yang konsisten.
+</p>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+<div class="section-title">
+<h2>Gallery</h2>
+</div>
+<div class="gallery-grid">
+<img src="gallery1.jpg" alt="">
+<img src="gallery2.jpg" alt="">
+<img src="gallery3.jpg" alt="">
+<img src="gallery4.jpg" alt="">
+</div>
+</div>
+</section>
+
+<section id="pricing">
+<div class="container">
+<div class="section-title">
+<h2>Price List 2026</h2>
+</div>
+
+<div class="pricing">
+
+<div class="price-card">
+<h3>Paket Zetta</h3>
+<p class="price">Rp 6.000.000</p>
+<ul>
+<li>Make up akad & resepsi CPW</li>
+<li>Beskap & jas CPP</li>
+<li>Make up & attire orang tua</li>
+<li>Pagar ayu (4) & pagar bagus (2)</li>
+<li>Fresh melati & softlens</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>Jasmine Package</h3>
+<p class="price">Rp 7.500.000</p>
+<ul>
+<li>Wedding Only</li>
+<li>Full fasilitas wedding</li>
+<li>Premium makeup finish</li>
+</ul>
+</div>
+
+<div class="price-card">
+<h3>Ayana Package</h3>
+<p class="price">Rp 9.000.000</p>
+<ul>
+<li>Wedding & Prewedding</li>
+<li>Full package fasilitas</li>
+<li>Makeup + attire lengkap</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<div class="container">
+<div class="section-title">
+<h2>Contact</h2>
+</div>
+<p>Email:
+<a href="mailto:hello@maksrimua.com" style="color:var(--brown);text-decoration:none;">
+hello@maksrimua.com
+</a>
+</p>
+</div>
+</section>
+
+<footer>
+© 2026 Maksri MUA | Wedding Makeup Artist Jawa Barat
+<br><br>
+<a href="https://www.instagram.com/maksri_mua?igsh=Mno2MHp0cWZia21y&utm_source=qr" target="_blank" class="footer-instagram">
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+<path d="M7.75 2C4.686 2 2 4.686 2 7.75v8.5C2 19.314 4.686 22 7.75 22h8.5C19.314 22 22 19.314 22 16.25v-8.5C22 4.686 19.314 2 16.25 2h-8.5zm4.25 4.25a4.75 4.75 0 100 9.5 4.75 4.75 0 000-9.5z"/>
+</svg>
+@maksri_mua
+</a>
+</footer>
+
+</body>
+</html>
